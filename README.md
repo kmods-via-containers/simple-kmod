@@ -8,10 +8,16 @@ To build on Fedora, first install:
 sudo dnf install kernel-devel make gcc
 ```
 
-Build using:
+To build for the currently running kernel use:
 
 ```
 make all
+```
+
+To build for a specific kernel:
+
+```
+make all KVER=5.3.4-300.fc31.x86_64
 ```
 
 Load module:
