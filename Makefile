@@ -5,7 +5,7 @@ KVER=$(shell uname -r)
 endif
 
 buildprep:
-	sudo yum install make gcc kernel-{core,devel,modules}-$(KVER)
+	sudo yum install -y make gcc kernel-{core,devel,modules}-$(KVER)
 all:
 	make -C /lib/modules/$(KVER)/build M=$(PWD) modules
 clean:
