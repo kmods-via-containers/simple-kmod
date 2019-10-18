@@ -4,10 +4,14 @@ ifndef KVER
 KVER=$(shell uname -r)
 endif
 
+ifndef VER
+VER=$(shell git describe HEAD 2>/dev/null || git rev-parse --short HEAD)
+endif
+
 buildprep:
 	sudo yum install -y make gcc kernel-{core,devel,headers,modules}-$(KVER)
 all:
-	make -C /lib/modules/$(KVER)/build M=$(PWD) modules
+	make -C /lib/modules/$(KVER)/build M=$(PWD) EXTRA_CFLAGS=-DKMODVERSION=\\\"$(VER)\\\" modules
 clean:
 	make -C /lib/modules/$(KVER)/build M=$(PWD) clean
 install:

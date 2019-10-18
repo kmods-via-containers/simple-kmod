@@ -4,6 +4,9 @@
 #include <linux/module.h>   /* Needed by all modules */
 #include <linux/kernel.h>   /* Needed for KERN_INFO */
 
+MODULE_LICENSE("MIT");
+MODULE_VERSION(KMODVERSION);
+
 int init_module(void)
 {
     printk(KERN_INFO "Hello world from simple_kmod.\n");
