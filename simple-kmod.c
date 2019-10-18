@@ -5,7 +5,7 @@
 #include <linux/kernel.h>   /* Needed for KERN_INFO */
 
 MODULE_LICENSE("MIT");
-MODULE_VERSION(KMODVERSION);
+MODULE_VERSION(KMODVER);
 
 int init_module(void)
 {

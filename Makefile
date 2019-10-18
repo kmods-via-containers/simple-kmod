@@ -1,7 +1,7 @@
 obj-m += simple-kmod.o
 
-ifndef KVER
-KVER=$(shell uname -r)
+ifndef KMODVER
+KMODVER=$(shell uname -r)
 endif
 
 ifndef VER
@@ -11,7 +11,7 @@ endif
 buildprep:
 	sudo yum install -y make gcc kernel-{core,devel,headers,modules}-$(KVER)
 all:
-	make -C /lib/modules/$(KVER)/build M=$(PWD) EXTRA_CFLAGS=-DKMODVERSION=\\\"$(VER)\\\" modules
+	make -C /lib/modules/$(KVER)/build M=$(PWD) EXTRA_CFLAGS=-DKMODVER=\\\"$(KMODVER)\\\" modules
 clean:
 	make -C /lib/modules/$(KVER)/build M=$(PWD) clean
 install:
