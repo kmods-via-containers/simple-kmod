@@ -17,3 +17,4 @@ clean:
 install:
 	sudo install -v -m 755 -d /lib/modules/$(KVER)/
 	sudo install -v -m 644 simple-kmod.ko /lib/modules/$(KVER)/simple-kmod.ko
+	sudo depmod -a
