@@ -9,7 +9,7 @@ VER=$(shell git describe HEAD 2>/dev/null || git rev-parse --short HEAD)
 endif
 
 buildprep:
-	sudo yum install -y make gcc kernel-{core,devel,headers,modules}-$(KVER)
+	sudo yum install -y gcc kernel-{core,devel,modules}-$(KVER)
 all:
 	make -C /lib/modules/$(KVER)/build M=$(PWD) EXTRA_CFLAGS=-DKMODVER=\\\"$(KMODVER)\\\" modules
 clean:
