@@ -16,6 +16,7 @@ simple-procfs-kmod.mod
 simple-procfs-kmod.mod.c
 simple-procfs-kmod.mod.o
 simple-procfs-kmod.o
+spkut
 Module.symvers
 modules.order
 .tmp_versions/
