@@ -1,11 +1,11 @@
 obj-m += simple-kmod.o
 
-ifndef KMODVER
-KMODVER=$(shell uname -r)
+ifndef KVER
+KVER=$(shell uname -r)
 endif
 
-ifndef VER
-VER=$(shell git describe HEAD 2>/dev/null || git rev-parse --short HEAD)
+ifndef KMODVER
+KMODVER=$(shell git describe HEAD 2>/dev/null || git rev-parse --short HEAD)
 endif
 
 buildprep:
